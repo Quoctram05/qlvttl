@@ -1,0 +1,89 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f0f8ff;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+h1, h2 {
+  text-align: center;
+  color: #007acc;
+  margin-bottom: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+th, td {
+  padding: 12px 14px;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #007acc;
+  color: #fff;
+}
+
+tr:hover {
+  background-color: #eef6ff;
+  cursor: pointer;
+}
+
+/* Form nhập liệu */
+form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+  margin-top: 10px;
+}
+
+form input {
+  padding: 10px 12px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+form input:focus {
+  border-color: #007acc;
+  background: #f0faff;
+  outline: none;
+}
+
+form button {
+  padding: 10px;
+  font-size: 1rem;
+  background: #007acc;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  grid-column: span 2;
+  transition: background 0.2s ease;
+}
+
+form button:hover {
+  background: #005f99;
+}
+
+#btn-xoa {
+  background: #dc3545 !important;
+}
+
+#btn-xoa:hover {
+  background: #bb2d3b !important;
+}
+  
