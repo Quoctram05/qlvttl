@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QUẢN LÝ THÔNG MINH VÙNG THANH LONG LÂM ĐỒNG</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/giaodien.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+    <ul class="navbar-menu">
+       <li class="navbar-item active"><a href="home.html">Trang chủ</a></li>
+        <li class="navbar-item">Nông dân
+            <div class="navbar-dropdown">
+                <a href="honongdan">Danh sách nông dân</a>
+                <a href="#">Thêm mới</a>
+            </div>
+        </li>
+        <li class="navbar-item">Đất đai
+            <div class="navbar-dropdown">
+                <a href="#">Sổ thửa & bản đồ</a>
+            </div>
+        </li>
+        <li class="navbar-item">Sản xuất
+            <div class="navbar-dropdown">
+                <a href="#">Theo dõi mùa vụ</a>
+                <a href="#">Chất lượng & bệnh hại</a>
+            </div>
+        </li>
+        <li class="navbar-item">Thị trường
+            <div class="navbar-dropdown">
+                <a href="#">Giá nông sản</a>
+                <a href="#">Báo cáo xuất khẩu</a>
+            </div>
+        </li>
+        <li class="navbar-item">Đào tạo
+            <div class="navbar-dropdown">
+                <a href="#">Tài liệu hướng dẫn</a>
+                <a href="#">Lịch tập huấn</a>
+            </div>
+        </li>
+        <li class="navbar-item">ADMIN
+            <div class="navbar-dropdown">
+                <a href="#">QUẢN LÍ</a>
+            </div>
+        </li>
+    </ul>
+</nav>
+
+<!-- Poster -->
+<section class="poster-main">
+    <img src="img/tl_back.jpg" class="img-back" alt="tl_back">
+    <!-- <video autoplay muted loop playsinline class="video-bg">
+        <source src="assets/img/videos/backkground.mp4" type="video/mp4" /> -->
+    </video>
+    <div class="poster-content">
+        <h1 class="poster-title">QUẢN LÝ VÙNG THANH LONG LÂM ĐỒNG</h1>
+        <div class="poster-actions">
+            <button class="poster-btn">Trải nghiệm hệ thống</button>
+            <button class="poster-btn poster-btn-secondary" onclick="window.location.href='aboutus.html'">Tìm hiểu thêm</button>
+        </div>
+    </div>
+</section>
+
+<!-- Gallery slider 2 ảnh/lượt -->
+<section class="gallery-section">
+    <h2>WELCOME TO LÂM ĐỒNG</h2>
+    <p class="gallery-subdesc">
+        Nền tảng số hóa quản trị vùng trồng hiện đại, minh bạch, truy xuất nguồn gốc,
+        kết nối thị trường và hỗ trợ nông dân phát triển bền vững.
+    </p>
+    <div id="thanhlongCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="d-flex justify-content-center gap-4">
+                    <img src="img/thanhlong1.png" class="d-block rounded" style="width: 40%; height: auto;" alt="Thanh long 1">
+                    <img src="img/thanhlong2.png" class="d-block rounded" style="width: 40%; height: auto;" alt="Thanh long 2">
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="d-flex justify-content-center gap-4">
+                    <img src="img/thanhlong3.png" class="d-block rounded" style="width: 40%; height: auto;" alt="Thanh long 3">
+                    <img src="img/thanhlong4.png" class="d-block rounded" style="width: 40%; height: auto;" alt="Thanh long 4">
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="d-flex justify-content-center gap-4">
+                    <img src="img/thanhlong5.png" class="d-block rounded" style="width: 40%; height: auto;" alt="Thanh long 5">
+                    <img src="img/thanhlong6.png" class="d-block rounded" style="width: 40%; height: auto;" alt="Thanh long 6">
+                </div>
+            </div>
+        </div>
+
+        <!-- Nút chuyển slide -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#thanhlongCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#xoaiCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/giaodien.js"></script>
+</body>
+</html>
