@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>Nhật ký canh tác</title>
+  <link rel="stylesheet" href="css/nhatkycanhtac.css" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>📖 Nhật Ký Canh Tác</h1>
+    <h2>➕ Thêm / Sửa Nhật Ký</h2>
+
+    <form id="nhatky-form">
+      <input type="text" id="MaNhatKy" placeholder="Mã nhật ký" required />
+      <input type="text" id="MaVung" placeholder="Mã vùng" />
+      <input type="text" id="MaHo" placeholder="Mã hộ" />
+      <input type="date" id="NgayThucHien" />
+      <input type="text" id="HoatDong" placeholder="Hoạt động" />
+      <input type="text" id="GhiChu" placeholder="Ghi chú" />
+      <button type="submit">Lưu</button>
+      <button type="button" id="btn-xoa">Xoá</button>
+    </form>
+
+    <div class="container-table">
+      <table id="nhatky-table">
+        <thead>
+          <tr>
+            <th>Mã Nhật Ký</th>
+            <th>Mã Vùng</th>
+            <th>Mã Hộ</th>
+            <th>Ngày Thực Hiện</th>
+            <th>Hoạt Động</th>
+            <th>Ghi Chú</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="js/nhatkycanhtac.js"></script>
+</body>
+</html>

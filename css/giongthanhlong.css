@@ -49,13 +49,6 @@ form input {
   border: 1px solid #ccc;
   flex: 1 1 220px;
   min-width: 180px;
-  transition: 0.2s ease;
-}
-
-form input:focus {
-  border-color: #007bff;
-  outline: none;
-  background-color: #f0faff;
 }
 
 form button {
@@ -66,21 +59,17 @@ form button {
   border-radius: 6px;
   cursor: pointer;
   color: #fff;
-  transition: 0.2s ease;
 }
 
 form button[type="submit"] {
-  background-color: #007bff;
+  background-color: #28a745;
 }
-
 form button[type="submit"]:hover {
-  background-color: #0056b3;
+  background-color: #218838;
 }
-
 form button#btn-xoa {
   background-color: #dc3545;
 }
-
 form button#btn-xoa:hover {
   background-color: #b72b38;
 }
@@ -93,41 +82,21 @@ form button#btn-xoa:hover {
 table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 10px;
   background-color: #fff;
 }
-
 thead {
   background-color: #007bff;
   color: white;
 }
-
 th, td {
   padding: 14px 12px;
   border: 1px solid #ddd;
   text-align: center;
 }
-
 tbody tr:nth-child(even) {
   background-color: #f8f9fa;
 }
-
 tbody tr:hover {
   background-color: #e9f3ff;
   cursor: pointer;
-}
-
-@media (max-width: 768px) {
-  form {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  form input {
-    width: 100%;
-  }
-
-  form button {
-    width: 100%;
-  }
 }

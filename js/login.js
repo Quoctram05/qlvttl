@@ -1,104 +1,117 @@
-// ==== CẤU HÌNH ĐƯỜNG DẪN ====
-const ROOT = '/qlvttl';
+// ==== CẤU HÌNH API ====
 const API = {
-  login:    `${location.origin}${ROOT}/php/login.php`,
-  register: `${location.origin}${ROOT}/php/register.php`,
+  login: "/qlvttl/php/api/taikhoan/api_dang_nhap.php",
+  register: "/qlvttl/php/api/taikhoan/api_dang_ky.php"
 };
 
-// ==== TAB ====
+// ==== CHUYỂN TAB (login / register) ====
 function showTab(tab) {
-  document.getElementById('login-form').style.display    = (tab === 'login')    ? 'flex' : 'none';
-  document.getElementById('register-form').style.display = (tab === 'register') ? 'flex' : 'none';
-  const btns = document.querySelectorAll('.tab-btn');
-  if (btns[0]) btns[0].classList.toggle('active', tab === 'login');
-  if (btns[1]) btns[1].classList.toggle('active', tab === 'register');
-  document.getElementById('login-message').innerText = "";
-  document.getElementById('register-message').innerText = "";
+  $("#login-form").css("display", tab === "login" ? "flex" : "none");
+  $("#register-form").css("display", tab === "register" ? "flex" : "none");
+
+  $(".tab-btn").removeClass("active");
+  $(`.tab-btn.${tab}`).addClass("active");
+
+  $("#login-message").text("");
+  $("#register-message").text("");
 }
 
-
-
 // ==== ĐĂNG NHẬP ====
-document.getElementById('login-form').onsubmit = async (e)=>{
+$("#login-form").on("submit", function (e) {
   e.preventDefault();
-  const username = document.getElementById('login-username').value.trim();
-  const password = document.getElementById('login-password').value;
-  const msg = document.getElementById('login-message');
-  msg.style.color = '#0a8'; msg.textContent='Đang đăng nhập…';
 
-  try{
-    const res = await fetch(API.login, {
-      method:'POST',
-      headers:{'Content-Type':'application/json'},
-      credentials:'include',
-      body: JSON.stringify({ TenDangNhap: username, MatKhau: password })
-    });
-    const data = await res.json();
-    if(!data.success) throw new Error(data.error || data.message || 'Đăng nhập thất bại');
+  const TenDangNhap = $("#login-username").val().trim();
+  const MatKhau = $("#login-password").val();
+  const msg = $("#login-message");
 
-    // lưu & chuyển trang
-    localStorage.setItem('auth_token', data.token || '');
-    localStorage.setItem('auth_user', JSON.stringify(data.user||{}));
-    msg.style.color = 'green';
-    msg.textContent = 'Đăng nhập thành công! Đang chuyển…';
-
-const ROOT = '/qlvttl';
-const APP  = `${ROOT}/php`;
-
-setTimeout(() => {
-  const role = String(data.user?.VaiTro || '').trim().toLowerCase();
-  location.href = (role === 'admin')
-    ? `${APP}/admin/index.php?p=dashboard`
-    : `${ROOT}/home.html`;   // <-- ngoài public
-}, 900);
-
-
-  }catch(err){
-    msg.style.color='red';
-    msg.textContent = err.message || 'Có lỗi xảy ra';
+  if (!TenDangNhap || !MatKhau) {
+    msg.css("color", "red").text("Vui lòng nhập đầy đủ thông tin");
+    return;
   }
-};
+
+  msg.css("color", "#0a8").text("Đang đăng nhập…");
+
+  $.ajax({
+    url: API.login,
+    method: "POST",
+    contentType: "application/json",
+    data: JSON.stringify({ TenDangNhap, MatKhau }),
+    success: function (res) {
+      if (!res.success) {
+        msg.css("color", "red").text(res.message || res.error || "Đăng nhập thất bại");
+        return;
+      }
+
+      // Lưu thông tin đăng nhập vào localStorage
+      localStorage.setItem("auth_token", res.token || "");
+      localStorage.setItem("auth_user", JSON.stringify(res.user || {}));
+
+      msg.css("color", "green").text("Đăng nhập thành công! Đang chuyển…");
+
+      setTimeout(() => {
+        const role = (res.user?.VaiTro || "").trim().toLowerCase();
+        window.location.href = (role === "admin")
+          ? "/qlvttl/php/admin/index.php?p=dashboard"
+          : "/qlvttl/index.html";
+      }, 1000);
+    },
+    error: function (xhr) {
+      console.error("Lỗi đăng nhập:", xhr.responseText);
+      msg.css("color", "red").text("Không thể đăng nhập");
+    }
+  });
+});
 
 // ==== ĐĂNG KÝ ====
-document.getElementById('register-form').onsubmit = async (e)=>{
+$("#register-form").on("submit", function (e) {
   e.preventDefault();
-  const username = document.getElementById('reg-username').value.trim();
-  const email    = document.getElementById('reg-email').value.trim();
-  const password = document.getElementById('reg-password').value;
-  const repass   = document.getElementById('reg-repassword').value;
-  const msg = document.getElementById('register-message');
 
-  if(password !== repass){
-    msg.style.color='red'; msg.textContent='Mật khẩu nhập lại không khớp'; return;
+  const TenDangNhap = $("#reg-username").val().trim();
+  const MaHo = $("#reg-maho").val().trim();
+  const Email = $("#reg-email").val().trim();
+  const MatKhau = $("#reg-password").val();
+  const repass = $("#reg-repassword").val();
+  const msg = $("#register-message");
+
+  if (!TenDangNhap || !MaHo || !Email || !MatKhau || !repass) {
+    msg.css("color", "red").text("Vui lòng nhập đầy đủ thông tin");
+    return;
   }
 
-  msg.style.color='#0a8'; msg.textContent='Đang tạo tài khoản…';
-
-  try{
-    const res = await fetch(API.register, {
-      method:'POST',
-      headers:{'Content-Type':'application/json'},
-      credentials:'include',
-      body: JSON.stringify({
-        TenDangNhap: username,
-        MatKhau: password,
-        HoTen: username,   // nếu chưa có input họ tên, tạm dùng username
-        Email: email,
-        VaiTro: 'User'
-      })
-    });
-    const data = await res.json();
-    if(!data.success) throw new Error(data.error || data.message || 'Đăng ký thất bại');
-
-    msg.style.color='green';
-    msg.textContent='Đăng ký thành công! Bạn có thể đăng nhập.';
-    setTimeout(()=>{
-      showTab('login');
-      document.getElementById('login-username').value = username;
-      document.getElementById('login-password').value = password;
-    }, 800);
-  }catch(err){
-    msg.style.color='red';
-    msg.textContent = err.message || 'Có lỗi xảy ra';
+  if (MatKhau !== repass) {
+    msg.css("color", "red").text("Mật khẩu nhập lại không khớp");
+    return;
   }
-};
+
+  msg.css("color", "#0a8").text("Đang tạo tài khoản…");
+
+  $.ajax({
+    url: API.register,
+    method: "POST",
+    contentType: "application/json",
+    data: JSON.stringify({
+      TenDangNhap,
+      MatKhau,
+      MaHo,
+      Email
+    }),
+    success: function (res) {
+      if (!res.success) {
+        msg.css("color", "red").text(res.message || res.error || "Đăng ký thất bại");
+        return;
+      }
+
+      msg.css("color", "green").text("Đăng ký thành công! Bạn có thể đăng nhập.");
+
+      setTimeout(() => {
+        showTab("login");
+        $("#login-username").val(TenDangNhap);
+        $("#login-password").val(MatKhau);
+      }, 1000);
+    },
+    error: function (xhr) {
+      console.error("Lỗi đăng ký:", xhr.responseText);
+      msg.css("color", "red").text("Không thể đăng ký");
+    }
+  });
+});

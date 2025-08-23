@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Danh sách Nhà Cung Cấp</title>
+  <link rel="stylesheet" href="css/nhacungcap.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>📦 Danh sách Nhà Cung Cấp</h1>
+    <h2>➕ Thêm / Sửa Nhà Cung Cấp</h2>
+
+    <form id="ncc-form">
+      <input type="text" id="MaNCC" placeholder="Mã NCC" required />
+      <input type="text" id="TenNCC" placeholder="Tên NCC" required />
+      <input type="text" id="DiaChi" placeholder="Địa chỉ" />
+      <input type="text" id="SDT" placeholder="Số điện thoại" />
+      <input type="email" id="Email" placeholder="Email" />
+      <button type="submit">Lưu</button>
+      <button type="button" id="btn-xoa">Xóa</button>
+    </form>
+
+    <div class="container-table">
+      <table id="ncc-table">
+        <thead>
+          <tr>
+            <th>Mã NCC</th>
+            <th>Tên NCC</th>
+            <th>Địa chỉ</th>
+            <th>Số điện thoại</th>
+            <th>Email</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Dữ liệu từ AJAX -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="js/nhacungcap.js"></script>
+</body>
+</html>

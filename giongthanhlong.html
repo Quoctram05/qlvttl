@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Danh sách Giống Thanh Long</title>
+  <link rel="stylesheet" href="css/giongthanhlong.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>🌱 Danh sách Giống Thanh Long</h1>
+    <h2>➕ Thêm / Sửa Giống</h2>
+
+    <form id="giong-form">
+      <input type="text" id="MaGiong" placeholder="Mã Giống" required />
+      <input type="text" id="TenGiong" placeholder="Tên Giống" required />
+      <input type="text" id="NguonGoc" placeholder="Nguồn Gốc" />
+      <input type="text" id="DacDiem" placeholder="Đặc Điểm" />
+      <input type="date" id="NgayApDung" placeholder="Ngày Áp Dụng" />
+      <button type="submit">Lưu</button>
+      <button type="button" id="btn-xoa" style="background:red;">Xoá</button>
+    </form>
+
+    <div class="container-table">
+      <table id="giong-table">
+        <thead>
+          <tr>
+            <th>Mã Giống</th>
+            <th>Tên Giống</th>
+            <th>Nguồn Gốc</th>
+            <th>Đặc Điểm</th>
+            <th>Ngày Áp Dụng</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- AJAX sẽ thêm dữ liệu -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="js/giongthanhlong.js"></script>
+</body>
+</html>

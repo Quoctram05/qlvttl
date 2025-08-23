@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>Thiết Bị IoT</title>
+  <link rel="stylesheet" href="css/thietbiiot.css" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>📡 Danh sách Thiết Bị IoT</h1>
+    <h2>➕ Thêm / Sửa Thiết Bị IoT</h2>
+
+    <form id="iot-form">
+      <input type="text" id="MaIoT" placeholder="Mã IoT" required />
+      <input type="text" id="LoaiCamBien" placeholder="Loại cảm biến" />
+      <input type="number" id="GiaTriDo" placeholder="Giá trị đo" />
+      <input type="text" id="DonVi" placeholder="Đơn vị" />
+      <input type="datetime-local" id="ThoiGianDo" />
+      <input type="number" id="TrangThai" placeholder="Trạng thái" />
+      <input type="text" id="MaVung" placeholder="Mã vùng" />
+      <input type="number" id="CanhBaoNguyen" placeholder="Cảnh báo nguy cơ" />
+      <button type="submit">Lưu</button>
+      <button type="button" id="btn-xoa">Xoá</button>
+    </form>
+
+    <div class="container-table">
+      <table id="iot-table">
+        <thead>
+          <tr>
+            <th>Mã IoT</th>
+            <th>Loại Cảm Biến</th>
+            <th>Giá Trị Đo</th>
+            <th>Đơn Vị</th>
+            <th>Thời Gian Đo</th>
+            <th>Trạng Thái</th>
+            <th>Mã Vùng</th>
+            <th>Cảnh Báo Nguy</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+  <script src="js/thietbiiot.js"></script>
+</body>
+</html>

@@ -9,33 +9,37 @@
 <body>
   <div class="container">
     <h1>📋 Danh sách Hộ Nông Dân</h1>
-    <!-- Thêm vào dưới bảng -->
-<h2>➕ Thêm / Sửa Hộ Nông Dân</h2>
-<form id="honongdan-form">
-  <input type="text" id="MaHo" placeholder="Mã hộ" required />
-  <input type="text" id="TenChuHo" placeholder="Tên chủ hộ" required />
-  <input type="text" id="CCCD" placeholder="CCCD" />
-  <input type="date" id="NgaySinh" />
-  <input type="text" id="SoDienThoai" placeholder="Số điện thoại" />
-  <input type="text" id="DiaChi" placeholder="Địa chỉ" />
-  <button type="submit">Lưu</button>
-  <button type="button" id="btn-xoa" style="background:red;"> Xóa</button>
-</form>
-    <table id="honongdan-table">
-      <thead>
-        <tr>
-          <th>Mã Hộ</th>
-          <th>Chủ Hộ</th>
-          <th>CCCD</th>
-          <th>Ngày Sinh</th>
-          <th>Số ĐT</th>
-          <th>Địa Chỉ</th>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- Dữ liệu sẽ được chèn bằng AJAX -->
-      </tbody>
-    </table>
+      <h2>➕ Thêm / Sửa Hộ Nông Dân</h2>
+      <form id="honongdan-form">
+        <input type="text" id="MaHo" placeholder="Mã hộ" required />
+        <input type="text" id="TenChuHo" placeholder="Tên chủ hộ" required />
+        <input type="text" id="CCCD" placeholder="CCCD" />
+        <input type="number" id="GioiTinh" placeholder="Giới Tính" min="0" max="1" />
+        <input type="date" id="NgaySinh" />
+        <input type="text" id="SDT" placeholder="Số điện thoại" />
+        <input type="text" id="DiaChi" placeholder="Địa chỉ" />
+        <button type="submit">Lưu</button>
+        <button type="button" id="btn-xoa" style="background:red;"> Xóa</button>
+      </form>
+    
+      <div class="container-table">
+        <table id="honongdan-table">
+        <thead>
+          <tr>
+            <th>Mã Hộ</th>
+            <th>Chủ Hộ</th>
+            <th>CCCD</th>
+            <th>Giới Tính</th>
+            <th>Ngày Sinh</th>
+            <th>Số Điện Thoại</th>
+            <th>Địa Chỉ</th>
+          </tr>
+        </thead>
+        <tbody>
+              <!-- Dữ liệu sẽ được chèn bằng AJAX -->
+        </tbody>
+      </table>
+      </div>
   </div>
 
   <script src="js/honongdan.js"></script>

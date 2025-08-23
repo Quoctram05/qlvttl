@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Danh sách Vùng Trồng</title>
+  <link rel="stylesheet" href="css/vungtrong.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>🌿 Danh sách Vùng Trồng</h1>
+    <h2>➕ Thêm / Sửa Vùng Trồng</h2>
+
+    <form id="vungtrong-form">
+      <input type="text" id="MaVung" placeholder="Mã vùng" required />
+      <input type="text" id="TenVung" placeholder="Tên vùng" required />
+      <input type="text" id="MaHo" placeholder="Mã hộ" required />
+      <input type="number" id="DienTich" placeholder="Diện tích (ha)" step="0.01" required />
+      <input type="text" id="LoaiDat" placeholder="Loại đất" />
+      <input type="text" id="DieuKienTN" placeholder="Điều kiện tự nhiên" />
+      <input type="text" id="ViTriToaDo" placeholder="Vị trí tọa độ" />
+      <input type="text" id="MaGiong" placeholder="Mã giống" />
+      <input type="number" id="TrangThaiVung" placeholder="Trạng thái vùng" min="0" max="2" />
+      <button type="submit">Lưu</button>
+      <button type="button" id="btn-xoa" style="background:red;">Xoá</button>
+    </form>
+
+    <div class="container-table">
+      <table id="vungtrong-table">
+        <thead>
+          <tr>
+            <th>Mã Vùng</th>
+            <th>Tên Vùng</th>
+            <th>Mã Hộ</th>
+            <th>Diện Tích</th>
+            <th>Loại Đất</th>
+            <th>Điều Kiện TN</th>
+            <th>Vị Trí Tọa Độ</th>
+            <th>Mã Giống</th>
+            <th>Trạng Thái</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Dữ liệu được chèn bằng JavaScript -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="js/vungtrong.js"></script>
+</body>
+</html>

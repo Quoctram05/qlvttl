@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>Danh sách Thiết Bị Máy Móc</title>
+  <link rel="stylesheet" href="css/thietbimaymoc.css" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>🛠️ Danh sách Thiết Bị Máy Móc</h1>
+    <h2>➕ Thêm / Sửa Thiết Bị</h2>
+
+    <form id="tb-form">
+      <input type="text" id="MaThietBi" placeholder="Mã thiết bị" required />
+      <input type="text" id="TenThietBi" placeholder="Tên thiết bị" required />
+      <input type="text" id="LoaiThietBi" placeholder="Loại thiết bị" />
+      <input type="number" id="TrangThai" placeholder="Trạng thái (0 hoặc 1)" />
+      <input type="date" id="NgayNhap" />
+      <input type="text" id="NhaSanXuat" placeholder="Nhà sản xuất" />
+      <button type="submit">Lưu</button>
+      <button type="button" id="btn-xoa">Xoá</button>
+    </form>
+
+    <div class="container-table">
+      <table id="tb-table">
+        <thead>
+          <tr>
+            <th>Mã Thiết Bị</th>
+            <th>Tên Thiết Bị</th>
+            <th>Loại Thiết Bị</th>
+            <th>Trạng Thái</th>
+            <th>Ngày Nhập</th>
+            <th>Nhà Sản Xuất</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+  <script src="js/thietbimaymoc.js"></script>
+</body>
+</html>

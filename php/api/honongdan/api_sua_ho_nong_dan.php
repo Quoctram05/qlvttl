@@ -34,7 +34,7 @@ if ($chk->num_rows === 0) {
     echo json_encode(["success"=>false,"error"=>"NOT_FOUND","message"=>"Không tìm thấy hộ nông dân với MaHo = $MaHo"], JSON_UNESCAPED_UNICODE);
     exit;
 }
-$chk->close;
+$chk->close();
 
 /* Lấy các trường cho phép cập nhật */
 $fields = [];
