@@ -1,8 +1,8 @@
 const API = {
-  list:   "/qlvttl/php/api/giongthanhlong/api_hien_thi_giong_thanh_long.php",
-  add:    "/qlvttl/php/api/giongthanhlong/api_them_giong_thanh_long.php",
-  update: "/qlvttl/php/api/giongthanhlong/api_sua_giong_thanh_long.php",
-  remove: "/qlvttl/php/api/giongthanhlong/api_xoa_giong_thanh_long.php"
+  list:   "/nhom16/qlvttl/php/api/giongthanhlong/api_hien_thi_giong_thanh_long.php",
+  add:    "/nhom16/qlvttl/php/api/giongthanhlong/api_them_giong_thanh_long.php",
+  update: "/nhom16/qlvttl/php/api/giongthanhlong/api_sua_giong_thanh_long.php",
+  remove: "/nhom16/qlvttl/php/api/giongthanhlong/api_xoa_giong_thanh_long.php"
 };
 
 // ==== 1. HIỂN THỊ DANH SÁCH GIỐNG ====

@@ -1,8 +1,8 @@
 const API = {
-  list:   "/qlvttl/php/api/IoT/api_hien_thi_IoT.php",
-  add:    "/qlvttl/php/api/IoT/api_them_IoT.php",
-  update: "/qlvttl/php/api/IoT/api_sua_IoT.php",
-  remove: "/qlvttl/php/api/IoT/api_xoa_IoT.php"
+  list:   "/nhom16/qlvttl/php/api/IoT/api_hien_thi_IoT.php",
+  add:    "/nhom16/qlvttl/php/api/IoT/api_them_IoT.php",
+  update: "/nhom16/qlvttl/php/api/IoT/api_sua_IoT.php",
+  remove: "/nhom16/qlvttl/php/api/IoT/api_xoa_IoT.php"
 };
 
 function taiDanhSach() {

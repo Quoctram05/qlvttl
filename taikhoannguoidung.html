@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Danh sách Tài Khoản Người Dùng</title>
+  <link rel="stylesheet" href="css/taikhoannguoidung.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>👤 Danh sách Tài Khoản Người Dùng</h1>
+    <h2>➕ Thêm / Sửa Tài Khoản</h2>
+
+    <form id="taikhoan-form">
+      <input type="text" id="MaTaiKhoan" placeholder="Mã tài khoản" required />
+      <input type="text" id="TenDangNhap" placeholder="Tên đăng nhập" required />
+      <input type="password" id="MatKhau" placeholder="Mật khẩu" />
+      <input type="text" id="VaiTro" placeholder="Vai trò (admin/nong_dan)" />
+      <input type="number" id="TrangThai" placeholder="Trạng thái" />
+      <input type="date" id="NgayDangKy" />
+      <input type="text" id="MaHo" placeholder="Mã hộ" />
+      <input type="email" id="Email" placeholder="Email" />
+      <button type="submit">Lưu</button>
+      <button type="button" id="btn-xoa" style="background:red;">Xoá</button>
+    </form>
+
+    <div class="container-table">
+      <table id="taikhoan-table">
+        <thead>
+          <tr>
+            <th>Mã TK</th>
+            <th>Tên đăng nhập</th>
+            <th>Vai trò</th>
+            <th>Trạng thái</th>
+            <th>Ngày đăng ký</th>
+            <th>Mã hộ</th>
+            <th>Email</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Dữ liệu sẽ được AJAX chèn vào -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="js/taikhoannguoidung.js"></script>
+</body>
+</html>

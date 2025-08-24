@@ -1,10 +1,10 @@
 // ==== CẤU HÌNH ==== 
 const ROOT = "/qlvttl/php/api";
 const API = {
-  list:   "/qlvttl/php/api/honongdan/api_hien_thi_ho_nong_dan.php",
-  add:    "/qlvttl/php/api/honongdan/api_them_ho_nong_dan.php",
-  update: "/qlvttl/php/api/honongdan/api_sua_ho_nong_dan.php",
-  remove: "/qlvttl/php/api/honongdan/api_xoa_ho_nong_dan.php"
+  list:   "/nhom16/qlvttl/php/api/honongdan/api_hien_thi_ho_nong_dan.php",
+  add:    "/nhom16/qlvttl/php/api/honongdan/api_them_ho_nong_dan.php",
+  update: "/nhom16/qlvttl/php/api/honongdan/api_sua_ho_nong_dan.php",
+  remove: "/nhom16/qlvttl/php/api/honongdan/api_xoa_ho_nong_dan.php"
 };
 
 function taiDanhSach() {

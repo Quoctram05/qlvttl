@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Quản lý Vật Tư Nông Nghiệp</title>
+  <link rel="stylesheet" href="css/vattunongnghiep.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>📦 Danh sách Vật Tư Nông Nghiệp</h1>
+
+    <h2>➕ Thêm / Sửa Vật Tư</h2>
+    <form id="vattu-form">
+  <div class="form-row">
+    <input type="text" id="MaVatTu" placeholder="Mã vật tư" required />
+    <input type="text" id="TenVatTu" placeholder="Tên vật tư" required />
+    <input type="text" id="LoaiVatTu" placeholder="Loại vật tư" />
+    <input type="text" id="DonViTinh" placeholder="Đơn vị tính" />
+    <input type="date" id="NgayNhap" />
+  </div>
+
+  <div class="form-actions">
+    <button type="submit">Lưu</button>
+    <button type="button" id="btn-xoa">Xóa</button>
+  </div>
+</form>
+
+
+    <div class="container-table">
+      <table id="vattu-table">
+        <thead>
+          <tr>
+            <th>Mã Vật Tư</th>
+            <th>Tên Vật Tư</th>
+            <th>Loại</th>
+            <th>Đơn Vị</th>
+            <th>Ngày Nhập</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Dữ liệu sẽ được chèn bằng JS -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="js/vattunongnghiep.js"></script>
+</body>
+</html>

@@ -1,46 +1,27 @@
 <?php
-header("Content-Type: application/json; charset=utf-8");
-require_once __DIR__ . "/../../connect.php";
+header('Content-Type: application/json; charset=utf-8');
+include_once __DIR__ . '/../../connect.php';
 
-$in = json_decode(file_get_contents("php://input"), true) ?: [];
 
-$MaNhatKy     = trim($in["MaNhatKy"]     ?? "");
-$MaVung       = trim($in["MaVung"]       ?? "");
-$MaHo         = trim($in["MaHo"]         ?? "");
-$NgayThucHien = trim($in["NgayThucHien"] ?? "");
-$HoatDong     = trim($in["HoatDong"]     ?? "");
-$GhiChu       = trim($in["GhiChu"]       ?? "");
+$in = json_decode(file_get_contents('php://input'), true) ?: [];
 
-if ($MaNhatKy === "" || $MaVung === "" || $MaHo === "" || $NgayThucHien === "" || $HoatDong === "") {
-  echo json_encode([
-    "success" => false,
-    "error" => "MISSING_FIELDS",
-    "message" => "Thiếu thông tin bắt buộc để cập nhật"
-  ]);
-  exit;
+$MaNhatKy = $in['MaNhatKy'] ?? '';
+$MaVung = $in['MaVung'] ?? '';
+$MaHo = $in['MaHo'] ?? '';
+$NgayThucHien = $in['NgayThucHien'] ?? '';
+$HoatDong = $in['HoatDong'] ?? '';
+$GhiChu = $in['GhiChu'] ?? '';
+
+if (!$MaNhatKy || !$MaVung || !$MaHo || !$NgayThucHien || !$HoatDong) {
+    echo json_encode(['success' => false, 'error' => 'Thiếu trường bắt buộc']);
+    exit;
 }
 
-$stmt = $conn->prepare("
-  UPDATE nhatkycanhtac 
-  SET MaVung=?, MaHo=?, NgayThucHien=?, HoatDong=?, GhiChu=?
-  WHERE MaNhatKy=?
-");
+$stmt = $conn->prepare("UPDATE nhatkycanhtac SET MaVung=?, MaHo=?, NgayThucHien=?, HoatDong=?, GhiChu=? WHERE MaNhatKy=?");
 $stmt->bind_param("ssssss", $MaVung, $MaHo, $NgayThucHien, $HoatDong, $GhiChu, $MaNhatKy);
 
 if ($stmt->execute()) {
-  echo json_encode([
-    "success" => true,
-    "message" => "✅ Cập nhật thành công",
-    "updated" => $stmt->affected_rows
-  ]);
+    echo json_encode(['success' => true, 'message' => 'Đã cập nhật nhật ký']);
 } else {
-  echo json_encode([
-    "success" => false,
-    "error" => "UPDATE_FAILED",
-    "message" => "❌ Không thể cập nhật",
-    "debug" => $stmt->error
-  ]);
+    echo json_encode(['success' => false, 'error' => 'UPDATE_FAILED', 'message' => 'Không thể cập nhật dữ liệu']);
 }
-
-$stmt->close();
-$conn->close();

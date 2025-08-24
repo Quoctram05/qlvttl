@@ -1,8 +1,8 @@
 const API = {
-  list:   "/qlvttl/php/api/maymoc/api_hien_thi_may_moc.php",
-  add:    "/qlvttl/php/api/maymoc/api_them_may_moc.php",
-  update: "/qlvttl/php/api/maymoc/api_sua_may_moc.php",
-  remove: "/qlvttl/php/api/maymoc/api_xoa_may_moc.php"
+  list:   "/nhom16/qlvttl/php/api/maymoc/api_hien_thi_may_moc.php",
+  add:    "/nhom16/qlvttl/php/api/maymoc/api_them_may_moc.php",
+  update: "/nhom16/qlvttl/php/api/maymoc/api_sua_may_moc.php",
+  remove: "/nhom16/qlvttl/php/api/maymoc/api_xoa_may_moc.php"
 };
 
 function taiDanhSach() {

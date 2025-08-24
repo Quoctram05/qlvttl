@@ -1,8 +1,8 @@
 const API = {
-  list:   "/qlvttl/php/api/vungtrong/api_hien_thi_vung_trong.php",
-  add:    "/qlvttl/php/api/vungtrong/api_them_vung_trong.php",
-  update: "/qlvttl/php/api/vungtrong/api_sua_vung_trong.php",
-  remove: "/qlvttl/php/api/vungtrong/api_xoa_vung_trong.php"
+  list:   "/nhom16/qlvttl/php/api/vungtrong/api_hien_thi_vung_trong.php",
+  add:    "/nhom16/qlvttl/php/api/vungtrong/api_them_vung_trong.php",
+  update: "/nhom16/qlvttl/php/api/vungtrong/api_sua_vung_trong.php",
+  remove: "/nhom16/qlvttl/php/api/vungtrong/api_xoa_vung_trong.php"
 };
 
 function taiDanhSach() {

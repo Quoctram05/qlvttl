@@ -1,7 +1,7 @@
 // ==== CẤU HÌNH API ====
 const API = {
-  login: "/qlvttl/php/api/taikhoan/api_dang_nhap.php",
-  register: "/qlvttl/php/api/taikhoan/api_dang_ky.php"
+  login: "/nhom16/qlvttl/php/api/taikhoan/api_dang_nhap.php",
+  register: "/nhom16/qlvttl/php/api/taikhoan/api_dang_ky.php"
 };
 
 // ==== CHUYỂN TAB (login / register) ====
@@ -51,8 +51,8 @@ $("#login-form").on("submit", function (e) {
       setTimeout(() => {
         const role = (res.user?.VaiTro || "").trim().toLowerCase();
         window.location.href = (role === "admin")
-          ? "/qlvttl/php/admin/index.php?p=dashboard"
-          : "/qlvttl/index.html";
+          ? "/nhom16/qlvttl/tongquan.html"
+          : "/nhom16/qlvttl/home.html";
       }, 1000);
     },
     error: function (xhr) {

@@ -1,8 +1,8 @@
 const API = {
-  list:   "/qlvttl/php/api/nhacungcap/api_hien_thi_nha_cung_cap.php",
-  add:    "/qlvttl/php/api/nhacungcap/api_them_nha_cung_cap.php",
-  update: "/qlvttl/php/api/nhacungcap/api_sua_nha_cung_cap.php",
-  remove: "/qlvttl/php/api/nhacungcap/api_xoa_nha_cung_cap.php"
+  list:   "/nhom16/qlvttl/php/api/nhacungcap/api_hien_thi_nha_cung_cap.php",
+  add:    "/nhom16/qlvttl/php/api/nhacungcap/api_them_nha_cung_cap.php",
+  update: "/nhom16/qlvttl/php/api/nhacungcap/api_sua_nha_cung_cap.php",
+  remove: "/nhom16/qlvttl/php/api/nhacungcap/api_xoa_nha_cung_cap.php"
 };
 
 function taiDanhSach() {
