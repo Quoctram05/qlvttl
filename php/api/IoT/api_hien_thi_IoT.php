@@ -12,7 +12,7 @@ $MaVung = isset($_GET['MaVung']) ? trim($_GET['MaVung']) : null;
 if ($MaIoT || $MaVung) {
   $sql = "SELECT i.MaIoT, i.LoaiCamBien, i.GiaTriDo, i.DonVi, i.ThoiGianDo, i.TrangThai,
                  i.MaVung, i.CanhBaoNguyen, v.TenVung
-          FROM thietbiIoT i
+          FROM thietbiiot i
           JOIN vungtrong v ON i.MaVung = v.MaVung
           WHERE 1=1";
   $types = ""; $params = [];
@@ -29,7 +29,7 @@ if ($MaIoT || $MaVung) {
 
 $q = "SELECT i.MaIoT, i.LoaiCamBien, i.GiaTriDo, i.DonVi, i.ThoiGianDo, i.TrangThai,
              i.MaVung, i.CanhBaoNguyen, v.TenVung
-      FROM thietbiIoT i JOIN vungtrong v ON i.MaVung=v.MaVung
+      FROM thietbiiot i JOIN vungtrong v ON i.MaVung=v.MaVung
       ORDER BY i.MaIoT";
 $res = $conn->query($q); $data=[]; while($r=$res->fetch_assoc()) $data[]=$r;
 echo json_encode(["success"=>true,"data"=>$data], JSON_UNESCAPED_UNICODE);

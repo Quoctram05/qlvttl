@@ -3,9 +3,9 @@
 // CẤU HÌNH DATABASE
 // ======================
 $DB_HOST = "localhost";      // Tên host
-$DB_USER = "sql_nhom16_itimi";           // Tài khoản MySQL
-$DB_PASS = "9f1db7853e8ab";               // Mật khẩu MySQL
-$DB_NAME = "sql_nhom16_itimi";    // Tên CSDL
+$DB_USER = "root";           // Tài khoản MySQL
+$DB_PASS = "";               // Mật khẩu MySQL
+$DB_NAME = "qlvttl_dvt";    // Tên CSDL
 
 // ======================
 // CẤU HÌNH KHÁC

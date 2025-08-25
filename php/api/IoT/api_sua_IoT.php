@@ -14,7 +14,7 @@ if (!$MaIoT && isset($b['MaIoT'])) $MaIoT = trim($b['MaIoT']);
 if (!$MaIoT){ http_response_code(400); echo json_encode(["success"=>false,"error"=>"MISSING_MAIOT"], JSON_UNESCAPED_UNICODE); exit; }
 
 /* tồn tại? */
-$chk=$conn->prepare("SELECT 1 FROM thietbiIoT WHERE MaIoT=? LIMIT 1");
+$chk=$conn->prepare("SELECT 1 FROM thietbiiot WHERE MaIoT=? LIMIT 1");
 $chk->bind_param("s",$MaIoT); $chk->execute(); $chk->store_result();
 if ($chk->num_rows===0){ $chk->close(); http_response_code(404); echo json_encode(["success"=>false,"error"=>"NOT_FOUND"], JSON_UNESCAPED_UNICODE); exit; }
 $chk->close();
@@ -52,7 +52,7 @@ if (array_key_exists('MaVung',$b)) {
   $s->close();
 
   /* vùng đã có IoT khác? */
-  $s=$conn->prepare("SELECT 1 FROM thietbiIoT WHERE MaVung=? AND MaIoT<>? LIMIT 1");
+  $s=$conn->prepare("SELECT 1 FROM thietbiiot WHERE MaVung=? AND MaIoT<>? LIMIT 1");
   $s->bind_param("ss",$mv,$MaIoT); $s->execute(); $s->store_result();
   if ($s->num_rows>0){ $s->close(); http_response_code(409); echo json_encode(["success"=>false,"error"=>"MAVUNG_TAKEN"], JSON_UNESCAPED_UNICODE); exit; }
   $s->close();
@@ -62,7 +62,7 @@ if (array_key_exists('MaVung',$b)) {
 
 if (empty($fields)){ http_response_code(400); echo json_encode(["success"=>false,"error"=>"NO_FIELDS"], JSON_UNESCAPED_UNICODE); exit; }
 
-$sql="UPDATE thietbiIoT SET ".implode(", ",$fields)." WHERE MaIoT=?";
+$sql="UPDATE thietbiiot SET ".implode(", ",$fields)." WHERE MaIoT=?";
 $types.="s"; $params[]=$MaIoT;
 
 $st=$conn->prepare($sql);

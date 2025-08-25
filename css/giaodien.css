@@ -96,6 +96,23 @@ body {
     color: #3352ff;
 }
 
+/* CSS cho nút đăng xuất trong menu */
+.logout-btn {
+  background-color: #dc3545; /* đỏ */
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+.logout-btn:hover {
+  background-color: #c82333; /* đỏ đậm hơn khi hover */
+}
+
+
 .poster-main {
     position: relative;
     width: 100%;
@@ -179,6 +196,7 @@ body {
     background: linear-gradient(90deg, #424bc7 0%, #ec2cfe 100%) !important;
     color: #fff !important;
 }
+
 
 .gallery-section {
     background: linear-gradient(to bottom right, #eaeaea, #cccccc);
